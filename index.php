@@ -1,0 +1,19 @@
+<?php
+declare(strict_types=1);
+
+require __DIR__ . './vendor/autoload.php';
+
+use Exam_PHP_OOP\Frameworks\DIContainer;
+
+$container = new DIContainer();
+
+
+////require __DIR__ . '/../vendor/composer/autoload_real.php';
+//require __DIR__ . '/./../vendor/autoload.php';
+//
+//use Lesson11MVC\Framework\DIContainer;
+//use Lesson11MVC\Framework\Router;
+//
+//$container = new DIContainer();
+//$router = new Router($container);
+//$router->process($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
