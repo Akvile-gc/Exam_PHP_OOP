@@ -9,7 +9,7 @@ class Tax
         private float $kw,
         private float $tariff,
         private string $type,
-        private string $month)
+        private int $month)
     {
     }
 
@@ -25,7 +25,7 @@ class Tax
         return $this->type;
     }
 
-    public function getMonth():string {
+    public function getMonth():int {
         return $this->month;
     }
 }

@@ -3,8 +3,15 @@ declare(strict_types=1);
 
 namespace Exam_PHP_OOP\Controllers;
 
+use Exam_PHP_OOP\Controllers\DataControllers\DateValidatorController;
+use Exam_PHP_OOP\Frameworks\DIContainer;
+use Exam_PHP_OOP\Models\TaxException;
+
 class TaxController
 {
+    public function __construct(public DIContainer $container)
+    {
+    }
 
     public function set()
     {
@@ -13,23 +20,16 @@ class TaxController
 
     public function add()
     {
-//        if ($input == '') {
-//            return [];
-//        }
-//
-//        $inputItems = explode(',', $input);
-//        $enteredData = [];
-//
-//        foreach ($inputItems as $item) {
-//            $unsortedData = explode(':', $item);
-//            $id = (int)$unsortedData[0];
-//            $quantity = (int)$unsortedData[1];
-//            $newData = new DataEntered($id, $quantity);
-//            $enteredData[] = $newData;
-//        }
-//
-//        return $enteredData;
+        $currentMonth = (int)date('n');
+        $validator = $this->container->get(DateValidatorController::class);
 
+        try {
+            $validator->validate($currentMonth);
+        } catch (TaxException $exception){
+            echo $exception->getMessage();
+        }
+
+        require __DIR__ . "/../../views/data_entered.php";
     }
 
     public function countTotal()

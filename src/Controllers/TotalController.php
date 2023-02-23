@@ -13,7 +13,8 @@ class TotalController
 
     public function list()
     {
-        $carList = $this->taxRepository->getAll();
+        $taxList = $this->taxRepository->getAll();
+
         require __DIR__ . "/../../views/total.php";
     }
 

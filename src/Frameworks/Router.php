@@ -8,7 +8,6 @@ use Exam_PHP_OOP\Controllers\TotalController;
 
 class Router
 {
-
     public function __construct(protected DIContainer $container)
     {
     }
@@ -22,7 +21,7 @@ class Router
             $taxController->set();
         } elseif ($path === '/form' && $method === 'POST') {
             $taxController->add();
-        } elseif ($path === '/form' && $method === 'POST') {
+        } elseif ($path === '/data_entered' && $method === 'POST') {
             $taxController->countTotal();
         } elseif ($path === '/total' && $method === 'GET') {
             $totalController->list();
