@@ -18,15 +18,17 @@ class Router
         $totalController = $this->container->get(TotalController::class);
 
         if($path === '/form' && $method === 'GET'){
-            $taxController->set();
+            $taxController->set(); //getting the initial form
         } elseif ($path === '/form' && $method === 'POST') {
-            $taxController->add();
+            $taxController->add(); //adding data
+        } elseif ($path === '/data_entered' && $method === 'GET') {
+            $taxController->showResponse(); //show what happened with the data entered
         } elseif ($path === '/data_entered' && $method === 'POST') {
-            $taxController->countTotal();
+            $taxController->countTotal(); //counting total
         } elseif ($path === '/total' && $method === 'GET') {
-            $totalController->list();
+            $totalController->list();  //showing the final list
         } elseif ($path === '/total' && $method === 'POST') {
-            $totalController->pay();
+            $totalController->pay(); //paying
         }
     }
 }

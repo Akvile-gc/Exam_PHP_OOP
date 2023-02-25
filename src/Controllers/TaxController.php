@@ -15,23 +15,28 @@ class TaxController
 
     public function set()
     {
-        require __DIR__ . "/../../views/form.php";
+        require __DIR__ . "/../../views/form.php";  //getting initial form to fill in
     }
 
     public function add()
     {
-        $currentMonth = (int)date('n');
+        $currentMonth = (int)date('n');  //getting current month
         $validator = $this->container->get(DateValidatorController::class);
 
         try {
-            $validator->validate($currentMonth);
+            $validator->validate($currentMonth);  //checking if the month entered can be paid for
+            $message = 'Jūsų duomenys pridėti';
         } catch (TaxException $exception){
-            echo $exception->getMessage();
+//            echo $exception->getMessage();
+            $errorMessage = $exception->getMessage();
         }
-
-        require __DIR__ . "/../../views/data_entered.php";
+            require __DIR__ . "/../../views/data_entered.php";
     }
 
+    public function showResponse()
+    {
+        require __DIR__ . "/../../views/data_entered.php";
+    }
     public function countTotal()
     {
 

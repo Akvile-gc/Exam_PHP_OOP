@@ -5,19 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Total</title>
+    <title>Viso</title>
 </head>
 <body>
     <div class="wrapper">
-        <p>List of the cars:</p>
+        <p>Įvesti duomenys:</p>
         <table>
             <thead>
             <tr style="font-weight: bold">
-                <td>Kilowatts</td>
-                <td>Tariff</td>
-                <td>Type of Tariff</td>
-                <td>Month</td>
-                <td>Total</td>
+                <td>Kilovatai</td>
+                <td>Tarifas</td>
+                <td>Tarifo tipas</td>
+                <td>Mėnesis</td>
+                <td>Viso</td>
             </tr>
             </thead>
             <tbody>
@@ -44,7 +44,11 @@
         </table>
 
 <!--        needs to change tax details to PAID-->
-        <button><a href="./form.php">Back to the form</a></button>
+        <div>
+            <form action="form.php" method="POST">
+                <input type="submit" name="paid" id="paid" value="Deklaruoti ir sumokėti">
+            </form>
+        </div>
     </div>
 
 

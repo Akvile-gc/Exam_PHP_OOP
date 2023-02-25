@@ -2,8 +2,6 @@
 declare(strict_types=1);
 
 require __DIR__ . './vendor/autoload.php';
-////require __DIR__ . '/../vendor/composer/autoload_real.php';
-//require __DIR__ . '/./../vendor/autoload.php';
 
 use Exam_PHP_OOP\Frameworks\DIContainer;
 USE Exam_PHP_OOP\Frameworks\Router;

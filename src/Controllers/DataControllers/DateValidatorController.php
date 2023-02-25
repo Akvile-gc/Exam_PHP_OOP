@@ -21,14 +21,14 @@ class DateValidatorController
         $errorMessage = $this->container->get(ErrorMessage::class);
         $encoding = $this->container->get(DataEntryController::class);
 
-        $taxDataArray = explode(',', $dataEntered);
+        $taxDataArray = explode(';', $dataEntered);
         $enteredData = [];
 
         foreach ($taxDataArray as $t) {
 
             $month = (int)$taxDataArray[3];
 
-            if ($currentMonth - $month === 1) {
+            if ($currentMonth - $month == 1) {
                 $kw = (int)$taxDataArray[0];
                 $tariff = (int)$taxDataArray[1];
                 $type = $taxDataArray[2];
@@ -36,7 +36,7 @@ class DateValidatorController
                 $enteredData[] = $tax;
                 $encoding->enterData(__DIR__ . '/../DataBase/tax_data.json', $enteredData);
 
-                echo 'Your data has been added';
+//                echo 'Your data has been added';
                 return $enteredData;
             } elseif ($currentMonth - $month > 1) {
                 throw $exception($errorMessage->overdue());
@@ -48,3 +48,5 @@ class DateValidatorController
         }
     }
 }
+
+var_dump($_POST['data_entered']);

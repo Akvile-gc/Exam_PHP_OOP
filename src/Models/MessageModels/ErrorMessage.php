@@ -8,21 +8,16 @@ class ErrorMessage implements ErrorMessageInterface
 {
         public function overdue():void
     {
-        echo 'Your bills are overdue for more than a month' . PHP_EOL;
+        echo 'Jūs vėluojate sumokėti mokesčius daugiau nei 1 mėn.' . PHP_EOL;
     }
 
     public function tooEarly():void
     {
-        echo 'You are paying your bills too early' . PHP_EOL;
+        echo 'Jūs mokate mokesčius per anksti' . PHP_EOL;
     }
 
     public function wrongData(): void
     {
-        echo 'Please enter correct data' . PHP_EOL;
+        echo 'Prašome suvesti teisingus duomenis' . PHP_EOL;
     }
-//    public function logMessage(string $message)
-//    {
-//        parent::logMessage($message);
-//        file_put_contents('./../DataBase/tax_data.json', $message . PHP_EOL, FILE_APPEND);
-//    }
 }
