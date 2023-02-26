@@ -23,20 +23,23 @@
             <tbody>
             <?php $total = 0?>
             <?php foreach ($taxList as $tax):?>
-
+            <?php if (count($tax) === 4):?>
                 <tr>
-                    <td><?php echo $tax->getKw() ?></td>
-                    <td><?php echo $tax->getTariff() ?></td>
-                    <td><?php echo $tax->getType() ?></td>
-                    <td><?php echo $tax->getMonth() ?></td>
-                    <?php $itemTotal = ($tax->getKw() * $tax->getTariff()) ?>
+                    <td><?php echo $tax['kw'] ?></td>
+                    <td><?php echo $tax['tariff'] ?></td>
+                    <td><?php echo $tax['type'] ?></td>
+                    <td><?php echo $tax['month'] ?></td>
+                    <?php $kw = (float)$tax['kw']?>
+                    <?php $tariff = (float)$tax['tariff']?>
+                    <?php $itemTotal = $kw * $tariff ?>
                     <td><?php echo $itemTotal ?></td>
                     <?php $total+=$itemTotal?>
                 </tr>
+            <?php endif;?>
             <?php endforeach; ?>
             </tbody>
             <tfoot>
-            <tr>
+            <tr style="font-weight: bold">
                 <td colspan="4">Total</td>
                 <td><?php echo $total?></td>
             </tr>
@@ -45,7 +48,7 @@
 
 <!--        needs to change tax details to PAID-->
         <div>
-            <form action="form.php" method="POST">
+            <form action="./total" method="POST">
                 <input type="submit" name="paid" id="paid" value="Deklaruoti ir sumokėti">
             </form>
         </div>

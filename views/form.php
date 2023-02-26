@@ -11,15 +11,16 @@
     <div class="wrapper">
         <div class="text">
             <h1>Įveskite mokesčių duomenis</h1>
-            <p>Įveskite šiuos duomenis: kilovatai, tarifas, dieninis ARBA naktinis tarifas, mėnesis už kurį mokama</p>
+            <p>Įveskite šiuos duomenis: kilovatai, tarifas, tarifo tipas (diena/naktis), mėnesis už kurį mokama</p>
         </div>
         <div class="form">
-            <form action="./data_entered" method="POST">
-<!--                <label for="data_entered" style="font-weight: bold">Įveskite duomenis šiuo formatu: xxxx.xx;xx.xx;diena/naktis;xx</label>-->
+            <form action="./form" method="POST">
+<!--                <form action="./data_entered" method="POST">-->
+
                 <label for="data_entered">Įveskite duomenis šiuo formatu:</label>
-                <label for="data_entered" style="font-weight: bold">xxxx.xx;xx.xx;diena/naktis;xx</label>
+                <label for="data_entered" style="font-weight: bold">xxxx.xx;xx.xx;tipas;xx</label>
                 <br>
-                <input type="text" name="data_entered" id="data_entered" placeholder="xxxx.xx;xx.xx;diena/naktis;xx">
+                <input type="text" name="data_entered" id="data_entered" placeholder="xxxx.xx;xx.xx;tipas;xx">
                 <input type="submit" name="add" id="add" value="Pridėti duomenis">
             </form>
         </div>

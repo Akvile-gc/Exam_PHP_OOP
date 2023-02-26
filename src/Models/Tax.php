@@ -6,18 +6,17 @@ namespace Exam_PHP_OOP\Models;
 class Tax
 {
     public function __construct(
-        private float $kw,
-        private float $tariff,
+        private string $kw,
+        private string $tariff,
         private string $type,
-        private int $month)
+        private string $month)
     {
     }
-
-    public function getKw():float {
+    public function getKw():string {
         return $this->kw;
     }
 
-    public function getTariff():float {
+    public function getTariff():string {
         return $this->tariff;
     }
 
@@ -25,7 +24,7 @@ class Tax
         return $this->type;
     }
 
-    public function getMonth():int {
+    public function getMonth():string {
         return $this->month;
     }
 }

@@ -6,8 +6,8 @@ namespace Exam_PHP_OOP\Models\MessageModels;
 
 interface ErrorMessageInterface
 {
-    public function overdue():void;
-    public function tooEarly():void;
+    public function overdue():string;
+    public function tooEarly():string;
 
-    public function wrongData():void;
+    public function wrongData():string;
 }

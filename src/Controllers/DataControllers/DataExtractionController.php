@@ -8,6 +8,11 @@ class DataExtractionController
     public function extractData(string $location):array
     {
         $extractedData = file_get_contents($location);
-        return json_decode($extractedData, true);
+        if ($extractedData){
+            $extracted = json_decode($extractedData, true);
+        } else {
+            $extracted = [];
+        }
+        return $extracted;
     }
 }

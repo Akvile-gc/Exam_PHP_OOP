@@ -3,9 +3,11 @@ declare(strict_types=1);
 
 namespace Exam_PHP_OOP\Controllers;
 
+use Exam_PHP_OOP\Controllers\DataControllers\DataExtractionController;
 use Exam_PHP_OOP\Controllers\DataControllers\DateValidatorController;
 use Exam_PHP_OOP\Frameworks\DIContainer;
 use Exam_PHP_OOP\Models\TaxException;
+use Exam_PHP_OOP\Repositories\TaxRepository;
 
 class TaxController
 {
@@ -26,22 +28,18 @@ class TaxController
         try {
             $validator->validate($currentMonth);  //checking if the month entered can be paid for
             $message = 'Jūsų duomenys pridėti';
-        } catch (TaxException $exception){
-//            echo $exception->getMessage();
-            $errorMessage = $exception->getMessage();
+        } catch (\Exception $e){
+            $message = $e->getMessage();
         }
             require __DIR__ . "/../../views/data_entered.php";
     }
 
-    public function showResponse()
-    {
-        require __DIR__ . "/../../views/data_entered.php";
-    }
     public function countTotal()
     {
 
+        $tax = $this->container->get(TaxRepository::class);
+        $taxList = $tax->getAll();
+
+        require __DIR__ . "/../../views/total.php";
     }
-
-
-
 }

@@ -12,21 +12,19 @@
         <div class="text">
             <h1>Jūsų duomenys:</h1>
             <div>
-                <?php if (true): ?>
-                    <p><?php echo $message ?></p>
-                <?php else:?>
-                    <p><?php echo $errorMessage ?></p>
-                <?php endif; ?>
+                <p><?php echo $message ?></p>
             </div>
-
-            <p>Norėdami pridėti daugiau duomenų, paspauskite mygtuką 'Atgal'. Norėdami pridėti daugiau duomenų, paspauskite mygtuką 'Viso'.</p>
+            <p>Norėdami pridėti daugiau duomenų, paspauskite mygtuką 'Atgal'.</p>
+            <p>Norėdami apskaičiuoti bendrą sumą, paspauskite mygtuką 'Viso'.</p>
         </div>
         <div>
             <button><a href="./form">Atgal</a></button>
         </div>
 
         <div>
-            <form action="./total" method="POST">
+            <form action="./data_entered" method="POST">
+<!--                included 25 line instead of 27 to check if this will be working-->
+<!--                <form action="./total" method="POST">-->
                 <input type="submit" name="total" id="total" value="Viso">
             </form>
         </div>

@@ -6,18 +6,18 @@ namespace Exam_PHP_OOP\Models\MessageModels;
 
 class ErrorMessage implements ErrorMessageInterface
 {
-        public function overdue():void
+        public function overdue():string
     {
-        echo 'Jūs vėluojate sumokėti mokesčius daugiau nei 1 mėn.' . PHP_EOL;
+        return 'Jūs vėluojate sumokėti mokesčius daugiau nei 1 mėn.';
     }
 
-    public function tooEarly():void
+    public function tooEarly():string
     {
-        echo 'Jūs mokate mokesčius per anksti' . PHP_EOL;
+        return 'Jūs mokate mokesčius per anksti';
     }
 
-    public function wrongData(): void
+    public function wrongData(): string
     {
-        echo 'Prašome suvesti teisingus duomenis' . PHP_EOL;
+        return 'Prašome suvesti teisingus duomenis';
     }
 }

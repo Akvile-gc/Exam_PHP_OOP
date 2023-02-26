@@ -15,6 +15,6 @@ class TaxRepository
     public function getAll():array
     {
         $extractedData = $this->container->get(DataExtractionController::class);
-        return $extractedData->extractData(__DIR__ . '/../DataBase/tax_data.json');
+        return $extractedData->extractData('D:\CodeAcademy\Back End\PHP\Exam_PHP_OOP\src\DataBase\tax_data.json');
     }
 }
